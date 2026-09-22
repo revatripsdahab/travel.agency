@@ -6,12 +6,12 @@ window.REVA_DEFAULT_DATA = {
     "siteName": "Reva Trips",
     "logoText": "REVA.TRIPS",
     "primaryColor": "#FE3A00",
-    "whatsappNumber": "201012345678",
-    "phoneNumber": "+20 10 1234 5678",
+    "whatsappNumber": "201040950571",
+    "phoneNumber": "01040950571",
     "email": "info@revatrips.com",
     "heroTitleAr": "إقامتك المثالية في أرقى الفنادق",
     "heroTitleEn": "Your Dream Stay in Sinai & Egypt, Effortlessly Curated",
-    "heroSubtitleAr": "نختار لك بعناية أرقى الفنادق وأجمل الكامبات البيئية مع أفضل الأسعار وتأكيد حجز سريع ومباشر.",
+    "heroSubtitleAr": "نختار لك بعناية أرقى الفنادق وأجمل الكامبات البيئية مع أفضل الأسعار وتأكيد حجز سريع ومباشر",
     "heroSubtitleEn": "Handpicked boutique hotels and serene eco-camps in Dahab, Sharm El Sheikh, and Nuweiba at the best rates with instant assistance.",
     "heroImageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?q=80&w=2070&auto=format&fit=crop",
     "aboutStoryAr": "شركة Reva Trips هي وجهتك الأولى لحجز وتنظيم الإقامات والرحلات في سيناء ومصر. نتميز بالشفافية والأسعار المباشرة والمتابعة الدائمة مع عملائنا.",
@@ -185,6 +185,37 @@ window.REVA_DEFAULT_DATA = {
           "nameEn": "Deluxe All-Inclusive Room",
           "price": 2600,
           "customLabel": "للفرد في الليلة (All Inclusive)",
+          "pricingType": "per_person_per_night"
+        }
+      ]
+    },
+    {
+      "id": "hotel_1790111361895",
+      "destId": "dest_1",
+      "destNameAr": "دهب",
+      "destNameEn": "Dahab",
+      "nameAr": "فندق ديزيرت",
+      "nameEn": "فندق ديزيرت",
+      "type": "Hotel",
+      "coverImage": null,
+      "gallery": [
+        null
+      ],
+      "descAr": "إقامة مريحة واستثنائية على شاطئ البحر مباشرة.",
+      "descEn": "Exceptional seaside stay.",
+      "rating": 4.9,
+      "amenities": [
+        "واي فاي",
+        "شاطئ خاص",
+        "تكييف"
+      ],
+      "rooms": [
+        {
+          "id": "room_1790111361895",
+          "nameAr": "غرفة قياسية",
+          "nameEn": "Standard Room",
+          "price": 1000,
+          "customLabel": null,
           "pricingType": "per_person_per_night"
         }
       ]
