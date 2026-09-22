@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reva Trips | حجز وتنظيم رحلات وإقامات دهب وسيناء ومصر</title>
+  <meta name="description" content="احجز أفضل الفنادق والكامبات السياحية في دهب، شرم الشيخ، نويبع ومصر مع Reva Trips بأسعار مباشرة وتأكيد فوري عبر WhatsApp." />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary: #FE3A00;
+  --primary-hover: #E03300;
+  --primary-glow: rgba(254, 58, 0, 0.35);
+  --bg-dark: #090A0C;
+  --card-bg: #161920;
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-main: #F3F4F6;
+  --text-muted: #9CA3AF;
+  --font-ar: 'Cairo', sans-serif;
+  --font-en: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-ar), var(--font-en), sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111318;
+}
+::-webkit-scrollbar-thumb {
+  background: #2b303c;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Glass Panels */
+.glass {
+  background: rgba(22, 25, 32, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+}
+
+.glass-card {
+  background: #161920;
+  border: 1px solid var(--card-border);
+  border-radius: 24px;
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(254, 58, 0, 0.35);
+  box-shadow: 0 12px 30px -10px rgba(254, 58, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Buttons */
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 12px 28px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  box-shadow: 0 0 25px var(--primary-glow);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  font-weight: 700;
+  border-radius: 9999px;
+  padding: 12px 28px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--primary);
+}
+
+.btn-whatsapp {
+  background: #10b981;
+  color: #fff;
+  font-weight: 700;
+  border-radius: 16px;
+  padding: 14px 24px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  font-size: 15px;
+  box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4);
+}
+
+.btn-whatsapp:hover {
+  background: #059669;
+  transform: scale(1.02);
+}
+
+/* Header & Nav */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 0.3s ease;
+  padding: 18px 0;
+  background: rgba(9, 10, 12, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 900;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.logo span {
+  color: var(--primary);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #D1D5DB;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+  color: var(--primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lang-btn {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 90vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 20px 80px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9, 10, 12, 0.6) 0%, rgba(9, 10, 12, 0.85) 60%, #090A0C 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 850px;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 6px 16px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  color: #E5E7EB;
+  margin-bottom: 36px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+/* Grids */
+.section {
+  padding: 80px 0;
+}
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.section-badge {
+  display: inline-block;
+  background: rgba(254, 58, 0, 0.1);
+  border: 1px solid rgba(254, 58, 0, 0.25);
+  color: var(--primary);
+  padding: 4px 14px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 28px;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 22px;
+}
+
+/* Destination Card */
+.dest-card {
+  position: relative;
+  height: 380px;
+  border-radius: 24px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 1px solid var(--card-border);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.dest-card img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.dest-card:hover img {
+  transform: scale(1.08);
+}
+
+.dest-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(9,10,12,0.1) 0%, rgba(9,10,12,0.85) 75%, #090A0C 100%);
+}
+
+.dest-content {
+  position: relative;
+  z-index: 10;
+}
+
+.dest-badge {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 10;
+  background: var(--primary);
+  color: #fff;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* Hotel Card */
+.hotel-card {
+  background: #161920;
+  border-radius: 24px;
+  border: 1px solid var(--card-border);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.hotel-card:hover {
+  border-color: rgba(254, 58, 0, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.5);
+}
+
+.hotel-img-wrapper {
+  position: relative;
+  height: 220px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.hotel-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.hotel-card:hover .hotel-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.hotel-type-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.hotel-rating-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  color: #fbbf24;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.hotel-body {
+  padding: 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hotel-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.hotel-desc {
+  font-size: 13px;
+  color: #9CA3AF;
+  line-height: 1.5;
+  margin-bottom: 18px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.hotel-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.hotel-price {
+  font-size: 20px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.hotel-price-unit {
+  font-size: 11px;
+  color: var(--primary);
+  font-weight: 600;
+  display: block;
+}
+
+/* Modals */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(10px);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+.modal-content {
+  background: #161920;
+  border: 1px solid var(--card-border);
+  border-radius: 28px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 32px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: #fff;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Booking Widget in Modal */
+.booking-box {
+  background: #0D0F14;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  padding: 24px;
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-label {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  color: #D1D5DB;
+  margin-bottom: 6px;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  background: #161920;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 10px 14px;
+  color: #fff;
+  font-size: 13px;
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.guest-counter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.guest-counter button {
+  width: 42px;
+  height: 42px;
+  background: #161920;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.guest-counter input {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  width: 80px;
+}
+
+.price-summary {
+  background: rgba(254, 58, 0, 0.08);
+  border: 1px solid rgba(254, 58, 0, 0.25);
+  border-radius: 16px;
+  padding: 16px;
+  margin: 16px 0;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.price-summary .total-val {
+  font-size: 26px;
+  font-weight: 900;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  background: #07080A;
+  border-top: 1px solid var(--card-border);
+  padding: 60px 0 30px;
+  color: #9CA3AF;
+  font-size: 13px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: #0D0F14;
+    padding: 24px;
+    flex-direction: column;
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .nav-links.mobile-open {
+    display: flex;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions a, .hero-actions button {
+    width: 100%;
+  }
+
+  .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    padding: 20px;
+  }
+}
+  </style>
+</head>
+<body>
+
+  <!-- Header / Navigation -->
+  <header>
+    <div class="container nav-container">
+      <a href="#" class="logo">REVA<span>.</span>TRIPS</a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#" class="active">الرئيسية</a></li>
+        <li><a href="#destinations">الوجهات</a></li>
+        <li><a href="#hotels">الفنادق والكامبات</a></li>
+        <li><a href="#about">عن Reva</a></li>
+        <li><a href="#reviews">آراء العملاء</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="langBtn" class="lang-btn" onclick="toggleLanguage()">English</button>
+        <a href="#hotels" class="btn-primary" style="padding: 8px 18px; font-size: 13px;">احجز الآن</a>
+        <a href="./admin.html" class="btn-secondary" style="padding: 8px 14px; font-size: 12px; background: rgba(254,58,0,0.15); border-color: rgba(254,58,0,0.3); color: #FE3A00;">⚙️ الإدارة</a>
+        <button class="mobile-menu-btn" onclick="document.getElementById('navLinks').classList.toggle('mobile-open')">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="heroSection">
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <div class="hero-badge">✨ الخيار الأول لإقامات سيناء ومصر</div>
+      <h1 class="hero-title" id="heroTitle">إقامتك المثالية في دهب وسيناء بلمسة واحدة</h1>
+      <p class="hero-subtitle" id="heroSubtitle">
+        نختار لك بعناية أرقى الفنادق وأجمل الكامبات البيئية مع أفضل الأسعار وتأكيد حجز سريع ومباشر.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#hotels" class="btn-primary">استكشف أماكن الإقامة 🧭</a>
+        <a href="#contact" class="btn-secondary">تواصل معنا مباشرة 💬</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations Section -->
+  <section class="section" id="destinations">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">أبرز الوجهات</span>
+        <h2 class="section-title">وجهات سيناء ومصر الساحرة</h2>
+        <p class="section-subtitle">اختر مدينتك المفضلة واستكشف أماكن الإقامة المختارة بعناية</p>
+      </div>
+
+      <div class="grid-3" id="destinationsGrid">
+        <!-- Injected dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Hotels & Camps Section -->
+  <section class="section" id="hotels" style="background: #0D0F14; border-top: 1px solid var(--card-border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">الإقامات الفندقية والكامبات</span>
+        <h2 class="section-title">أفضل الفنادق والكامبات المميزة</h2>
+        <p class="section-subtitle">إقامات مريحة، إطلالات ساحرة، وأسعار شفافة بدون أي وسيط</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="glass" style="padding: 16px; border-radius: 18px; margin-bottom: 36px; display: flex; flex-wrap: wrap; gap: 12px;">
+        <input type="text" id="filterSearch" class="form-input" placeholder="ابحث باسم الفندق أو الكامب..." oninput="renderHotels()" style="flex: 1; min-width: 200px;" />
+        <select id="filterDest" class="form-select" onchange="renderHotels()" style="flex: 1; min-width: 160px;"></select>
+        <select id="filterType" class="form-select" onchange="renderHotels()" style="flex: 1; min-width: 140px;">
+          <option value="all">كل الأنواع</option>
+          <option value="Camp">كامب (Camp)</option>
+          <option value="Hotel">فندق (Hotel)</option>
+          <option value="Resort">منتجع (Resort)</option>
+        </select>
+      </div>
+
+      <div class="grid-3" id="hotelsGrid">
+        <!-- Injected dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Reva Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">لماذا Reva Trips؟</span>
+        <h2 class="section-title">نعتني بكل تفاصيل إقامتك من البداية حتى العودة</h2>
+      </div>
+
+      <div class="grid-4">
+        <div class="glass-card" style="padding: 24px; text-align: center;">
+          <div style="font-size: 28px; margin-bottom: 12px;">🛡️</div>
+          <h3 style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;">إقامات موثوقة ومفحوصة</h3>
+          <p style="font-size: 12px; color: #9CA3AF;">معاينة وفحص دقيق للنظافة والخدمة والأمان في كل مكان.</p>
+        </div>
+
+        <div class="glass-card" style="padding: 24px; text-align: center;">
+          <div style="font-size: 28px; margin-bottom: 12px;">⚡</div>
+          <h3 style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;">حجز سريع ومباشر</h3>
+          <p style="font-size: 12px; color: #9CA3AF;">احسب التكلفة بضغطة زر وتواصل فوراً مع فريق الحجز عبر WhatsApp.</p>
+        </div>
+
+        <div class="glass-card" style="padding: 24px; text-align: center;">
+          <div style="font-size: 28px; margin-bottom: 12px;">💰</div>
+          <h3 style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;">أفضل أسعار تنافسية</h3>
+          <p style="font-size: 12px; color: #9CA3AF;">أسعار واضحة ومباشرة بدون أي زيادات خفية أو عمولات مفاجئة.</p>
+        </div>
+
+        <div class="glass-card" style="padding: 24px; text-align: center;">
+          <div style="font-size: 28px; margin-bottom: 12px;">🤝</div>
+          <h3 style="font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px;">دعم ومتابعة مستمرة</h3>
+          <p style="font-size: 12px; color: #9CA3AF;">فريقنا معك دائماً للإجابة عن أي استفسار حتى نهاية عطلتك.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews -->
+  <section class="section" id="reviews" style="background: #0D0F14; border-top: 1px solid var(--card-border);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">آراء عملائنا</span>
+        <h2 class="section-title">تجارب حقيقية من مسافرين مع Reva</h2>
+      </div>
+
+      <div class="grid-3" id="reviewsGrid">
+        <!-- Injected dynamically via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">تواصل معنا</span>
+        <h2 class="section-title">جاهز لقضاء إجازة استثنائية في سيناء؟</h2>
+        <p class="section-subtitle">فريق Reva في خدمتك دائماً لمساعدتك في التخطيط لعطلتك المثالية</p>
+      </div>
+
+      <div class="grid-3" style="max-width: 900px; margin: 0 auto;">
+        <div class="glass-card" style="padding: 28px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 12px;">💬</div>
+          <h3 style="font-size: 16px; font-weight: bold; color: #fff; margin-bottom: 8px;">WhatsApp مباشر</h3>
+          <p style="font-size: 12px; color: #9CA3AF; margin-bottom: 16px;">أسرع طريقة للتواصل وتأكيد الحجز.</p>
+          <a href="https://wa.me/201012345678" target="_blank" class="btn-primary" style="padding: 8px 20px; font-size: 12px; width: 100%;">محادثة فورية</a>
+        </div>
+
+        <div class="glass-card" style="padding: 28px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 12px;">📞</div>
+          <h3 style="font-size: 16px; font-weight: bold; color: #fff; margin-bottom: 8px;">اتصال هاتفي</h3>
+          <p style="font-size: 12px; color: #9CA3AF; margin-bottom: 16px;">يسعدنا تلقي مكالمتك يومياً.</p>
+          <a href="tel:+201012345678" class="btn-secondary" style="padding: 8px 20px; font-size: 12px; width: 100%;">+20 10 1234 5678</a>
+        </div>
+
+        <div class="glass-card" style="padding: 28px; text-align: center;">
+          <div style="font-size: 32px; margin-bottom: 12px;">✉️</div>
+          <h3 style="font-size: 16px; font-weight: bold; color: #fff; margin-bottom: 8px;">البريد الإلكتروني</h3>
+          <p style="font-size: 12px; color: #9CA3AF; margin-bottom: 16px;">للاستفسارات الرسمية وعروض الشركات.</p>
+          <a href="mailto:contact@revatrips.com" class="btn-secondary" style="padding: 8px 20px; font-size: 12px; width: 100%;">مراسلتنا</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 20px;">
+        <a href="#" class="logo">REVA<span>.</span>TRIPS</a>
+        <p style="font-size: 12px; color: #9CA3AF;">© 2026 Reva Trips. جميع الحقوق محفوظة.</p>
+        <a href="./admin.html" style="color: #6B7280; font-size: 12px; text-decoration: underline;">
+          ⚙️ لوحة التحكم (Admin CMS)
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Hotel Detail & Booking Modal -->
+  <div id="hotelModal" class="modal-backdrop">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">✕</button>
+      <div id="hotelModalBody"></div>
+    </div>
+  </div>
+
+  <script src="./data.js"></script>
+  <script src="./js/data.js"></script>
+  <script src="./sync.js"></script>
+  <script src="./js/sync.js"></script>
+  <script src="./main.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
