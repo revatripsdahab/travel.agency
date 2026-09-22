@@ -19,15 +19,6 @@ window.REVA_DEFAULT_DATA = {
   },
   "destinations": [
     {
-      "id": "dest_1",
-      "slug": "dahab",
-      "nameAr": "دهب",
-      "nameEn": "Dahab",
-      "coverImage": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1600&auto=format&fit=crop",
-      "descAr": "عاصمة الهدوء والاسترخاء والغطس في سيناء، ومياه البحر الأحمر الصافية.",
-      "descEn": "The bohemian jewel of Sinai, famous for world-class diving and serene vibes."
-    },
-    {
       "id": "dest_2",
       "slug": "sharm",
       "nameAr": "شرم الشيخ",
