@@ -35,6 +35,15 @@ window.REVA_DEFAULT_DATA = {
       "coverImage": "https://images.unsplash.com/photo-1510312305653-8ed496efae75?q=80&w=1600&auto=format&fit=crop",
       "descAr": "واحة السكينة والكامبات البيئية في رأس شيطان على شاطئ البحر مباشرة.",
       "descEn": "The sanctuary of untouched tranquility and eco-lodges in Ras Shaitan."
+    },
+    {
+      "id": "dest_1790114137679",
+      "slug": "Dahab",
+      "nameAr": "دهب",
+      "nameEn": "دهب",
+      "coverImage": "blob:https://www.image2url.com/4f1a94af-e307-4ea1-a592-ae30381405f7",
+      "descAr": "استمتع بأجمل الأوقات في دهب",
+      "descEn": "Enjoy your stay in دهب"
     }
   ],
   "hotels": [
